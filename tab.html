@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Tab Panel</title>
+<link rel="stylesheet" href="tab.css">
+</head>
+<body>
+<div id="outerdiv">
+<div id="innerdiv">
+<div id="innerdivbutton">
+<a href="#"class="buttons" onclick="display('0')">
+<center>
+<span>First</span>
+</center>
+</a>
+<a href="#" class="buttons" onclick="display('1')">
+<span>Second</span>
+</a>
+<a href="#" class="buttons" onclick="display('2')">
+<center>
+<span>Third</span>
+</center>
+</a>
+</div>
+
+<div id="innerdivcontent">
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+function display(index){
+    fetch('https://ankushsood8.github.io/files/')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+      console.log(data);
+document.getElementById("innerdivcontent").innerHTML=data[index].name;
+  })
+}
+</script>
+
+
+</body>
+</html>
